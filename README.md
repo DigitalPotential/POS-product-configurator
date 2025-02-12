@@ -2,6 +2,8 @@
 
 A React app that makes configuring products in a POS system quick and easy. Built with TypeScript and focused on making modifications (like sizes and flavors) and addons super simple to manage.
 
+**Live Demo**: [https://pos-product-configurator.vercel.app/](https://pos-product-configurator.vercel.app/)
+
 ### Core Features
 - Everything happens in one modal - no jumping between screens
 - Quick keyboard shortcuts to speed things up
