@@ -61,7 +61,7 @@ export const addonGroups: AddonGroupType[] = [
   },
 ];
 
-// import { ProductWithModifications, AddonGroup } from "../types";
+// import { ProductWithModifications, AddonGroupType } from "../types";
 
 // export const productWithModifications: ProductWithModifications = {
 //   id: "a_very_unique_soda_id",
@@ -88,7 +88,7 @@ export const addonGroups: AddonGroupType[] = [
 //   },
 // };
 
-// export const addonGroups: AddonGroup[] = [
+// export const addonGroups: AddonGroupType[] = [
 //   {
 //     name: "Extra toppings",
 //     limit: 2,
