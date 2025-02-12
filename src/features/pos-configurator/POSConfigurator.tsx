@@ -1,5 +1,6 @@
 import { usePOSStore } from "@/store/posStore";
 import { formatCurrency } from "@/utils/formatting";
+import { calculateTotal } from "@/utils/priceCalculations";
 import { ConfiguratorModal } from "./components/configurator-modal";
 import { useState } from "react";
 import { useKeyboardShortcuts } from "@/hooks/useKeyboardShortcuts";
@@ -17,7 +18,8 @@ export const POSConfigurator = () => {
   const [isConfiguring, setIsConfiguring] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const showShortcuts = useKeyboardShortcuts(isConfiguring);
-  const product = usePOSStore((state) => state.product);
+  const state = usePOSStore();
+  const product = state.product;
 
   if (!product) {
     return (
@@ -28,6 +30,9 @@ export const POSConfigurator = () => {
   }
 
   try {
+    // Calculate total price including all selections
+    const total = calculateTotal(state);
+
     // Figure out what keyboard numbers to show for each option
     const totalSizes = product.modifications.sizes.length || 0;
     const hasMultipleSizes = totalSizes > 1;
@@ -53,7 +58,7 @@ export const POSConfigurator = () => {
         {/* Click this card to start customizing */}
         <ProductCard onClick={() => setIsConfiguring(true)}>
           <ProductName>{product.name}</ProductName>
-          <ProductPrice>{formatCurrency(product.price)}</ProductPrice>
+          <ProductPrice>{formatCurrency(total)}</ProductPrice>
         </ProductCard>
 
         {/* Modal pops up when you click the card */}
