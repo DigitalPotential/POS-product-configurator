@@ -42,6 +42,17 @@ Features:
 - Add order history or frequently used combinations
 - Add customizable keyboard shortcuts
 
+### Mock Data Options
+The app comes with two sets of mock data in `src/data/data.ts`:
+- Default configuration: A simple setup with 2 sizes, 3 flavors, and basic addons
+- Extended configuration (commented out): A more complex setup with:
+  - 5 different sizes (Small to Mega)
+  - 8 flavors including premium options
+  - More addon options with different limits and prices
+  - Additional "remove" options like ice
+
+To try the extended version, simply comment out the current data and uncomment the extended version in `data.ts`.
+
 ### Quick Start
 ```bash
 # Using pnpm
