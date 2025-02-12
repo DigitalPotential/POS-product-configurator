@@ -1,0 +1,1 @@
+export { ConfiguratorFooter } from "./ConfiguratorFooter"
