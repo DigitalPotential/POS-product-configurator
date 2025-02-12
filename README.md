@@ -74,6 +74,13 @@ npm run dev
 - Vitest for testing
 - React
 
+### Architecture & Patterns
+The project follows several modern React patterns:
+- Feature-First Architecture: Code organized by feature rather than type
+- Barrel Pattern: Using index.ts files for clean exports
+- Component Co-location: Keeping related files together (components, styles, tests)
+- Styled-Components: CSS-in-JS with component-level styling
+
 ### Project Structure
 - `src/features/pos-configurator/`: Where the main POS stuff lives
 - `src/store/`: All our Zustand stores
@@ -81,8 +88,13 @@ npm run dev
 - `src/types/`: TypeScript definitions
 - `src/constants/`: App-wide constants
 
+The project uses Vite path aliases for cleaner imports:
+- `@/*` -> `src/*`
+- `@assets/*` -> `src/assets/*`
+- `@components/*` -> `src/components/*`
+
 ### Testing
-We've added tests for the most important parts:
+The project includes tests for the most important parts:
 - `posStore.ts`: Makes sure the core logic works
 - `priceCalculations.ts`: Keeps our math accurate
 
@@ -97,3 +109,10 @@ Setting it up:
 Right now we support:
 - `SE`: Swedish Krona (SEK)
 - `US`: US Dollar (USD)
+
+### State Management
+Zustand store handles:
+- Product configurations
+- User selections (size, flavor, addons)
+- UI state (error messages, group limits)
+- Keyboard shortcuts
